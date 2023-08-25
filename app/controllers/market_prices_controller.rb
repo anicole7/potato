@@ -1,17 +1,10 @@
 class MarketPricesController < ApplicationController
     def market_prices_list
-        @list = MarketPrice.all.as_json(only: [:date, :price])
+        @list = MarketPrice.at_date(Date.parse params[:date] ? params[:date] : Date.today.to_s).as_json(only: [:date, :price])
     end
 
     def day_prices
-        # à changer pour pouvoir choisir un jour
-        starting_date = Date.today()
-        ending_date = starting_date + 1.day
-
-        market_prices = MarketPrice.where(
-            "date >= :start_date AND date <= :ending_date",
-            start_date: starting_date, ending_date: ending_date
-        ).pluck(:price)
+        market_prices = MarketPrice.at_date(Date.parse params[:date] ? params[:date] : Date.today.to_s).pluck(:price)
     end
 
     def best_daily_benefit
