@@ -1,25 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dans le cadre de notre trading de patate je me suis servi d'une BDD Sqlite (exécuter le db:seed avant de démarrer).
 
-Things you may want to cover:
+A la racine '/' on trouvera le résultat de l'API1 qui retourne sous forme de JSON l'ensemble des prix.
+Pour le résultat de l'API2 aller sur '/best_daily_benefit'
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# potato
+Sans paramètres ces urls renverront les données du jour, si l'on veut préciser une date il faut ajouter ?date=dd-mm-yyyy
