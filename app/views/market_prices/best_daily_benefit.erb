@@ -1,0 +1,7 @@
+<%= "Pour l'ensemble des prix triés ci-desssu du plus ancien au plus récent" %></br></br>
+
+<% @daily_prices.each do |p| %>
+    <%= p %> </br>
+<% end %></br>
+
+<%= "Afin de réaliser le plus haut bénéfice de #{@max_benefit*100}€ il aurait fallu acheter 100 tonnes à #{@max} et les revendre à #{@min}" %>
